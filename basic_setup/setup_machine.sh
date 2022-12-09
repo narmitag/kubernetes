@@ -1,4 +1,5 @@
 #All machines
+# curl https://raw.githubusercontent.com/narmitag/kubernetes/main/basic_setup/setup_machine.sh -o setup_machine.sh
 
 cat <<EOF | sudo tee /etc/modules-load.d/containerd.conf 
 overlay 
@@ -35,7 +36,6 @@ EOF
 sudo apt-get update
 sudo apt-get install -y kubelet=1.24.0-00 kubeadm=1.24.0-00 kubectl=1.24.0-00
 sudo apt-mark hold kubelet kubeadm kubectl
-
-sudo kubeadm init --pod-network-cidr 10.1.0.0/16 --kubernetes-version 1.24.0
+ 
 
  
